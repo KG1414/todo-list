@@ -11,7 +11,7 @@ const ListItem = (props) => {
 
     return (
         <ListGroup.Item as="li" action variant="light" className="d-flex justify-content-between align-items-start">
-            <div className="ms-2 me-auto">
+            <div className="ms-2 me-auto" style={{ fontWeight: "bold" }}>
                 <label>
                     <input
                         style={{ marginRight: "10px" }}

@@ -12,12 +12,6 @@ const MyList = ({ theList }) => {
     return initialValue || theList;
   });
 
-  // const [title, setTitle] = useState(() => {
-  //   const savedTitle = localStorage.getItem("title");
-  //   const initialValue = JSON.parse(savedTitle);
-  //   return initialValue || 'List of things to do to stop procrastinating...';
-  // });
-
   const [input, setInput] = useState({
     newTask: '',
     title: '',
@@ -108,7 +102,7 @@ const MyList = ({ theList }) => {
     <div>
       <div className="title-wrapper">
         <i className="fa-solid fa-list-check fa-2xl header-logo"></i>
-        <h1>To Do List</h1>
+        <h1 style={{ fontWeight: "bold" }}>To Do List</h1>
       </div>
       <ListGroup className="list-wrapper" as="ol" numbered>
         {toDoItemsArray}
@@ -117,13 +111,13 @@ const MyList = ({ theList }) => {
         <div className="input-group mb-3">
           <input
             className="form-control"
-            placeholder='Add task'
+            placeholder='Enter Task'
             name="newTask"
             value={input.newTask}
             onChange={inputHandler}>
           </input>
           <Button variant="primary" id="button-addon2" type="submit" onClick={addItemHandler}>
-            Add Item
+            <span className="item-btn">Add Item</span>
           </Button>
         </div>
         <div>
@@ -131,13 +125,13 @@ const MyList = ({ theList }) => {
             className="clear-all-btn"
             variant="secondary"
             size="sm"
-            onClick={clearList}>Clear List <i className="fa-solid fa-ghost"></i>
+            onClick={clearList}><span className="item-btn">Clear list</span> <i className="fa-solid fa-ghost"></i>
           </Button>
           <Button
             className="delete-last-btn"
             variant="secondary"
             size="sm"
-            onClick={deleteLastItemHandler}>Delete last item <i className="fa-solid fa-square-minus"></i>
+            onClick={deleteLastItemHandler}><span className="item-btn">Delete last item</span> <i className="fa-solid fa-square-minus"></i>
           </Button>
         </div>
       </Form>

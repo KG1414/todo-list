@@ -71,3 +71,15 @@ h1 {
 .delete-last-btn {
   margin-left: 10px;
 }
+
+span.item-btn {
+  font-weight: bold;
+}
+
+input::placeholder {
+    font-weight: 100;
+}
+
+.added-task {
+  font-weight: bold;
+}
